@@ -13,17 +13,17 @@ class QRCallWebpackPlugin {
   }
 
   apply(compiler, callback) {
-    compiler.hooks.afterResolvers.tap('QRCallWebpackPlugin', (compiler2) => {
-      const { host, port, after } = compiler.options.devServer;
+    compiler.hooks.afterResolvers.tap('QRCallWebpackPlugin', () => {
+      const { host, port, before } = compiler.options.devServer;
       const _self = this;
 
-      if (after) {
-        compiler.options.devServer.after = function afterServer(...argument) {
-          after.call(this, ...argument);
+      if (before) {
+        compiler.options.devServer.before = function afterServer(...argument) {
+          before.call(this, ...argument);
           utils.devService({ host, port, small: _self.small }).call(this, ...argument);
         }
       } else {
-        compiler.options.devServer.after = utils.devService({ host, port, small: this.small });
+        compiler.options.devServer.before = utils.devService({ host, port, small: this.small });
       }
     });
 

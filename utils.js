@@ -27,6 +27,7 @@ exports.devService = ({port, host, small}) => {
               qrCodeSize = size === 's';
           }
 
+          console.log('\n')
           terminal.generate(`http://${exports.getIPAdress()}:${port}${path}`, {small: qrCodeSize});
           res.json({custom: ' Please check the QR code output from the console '});
       })
