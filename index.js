@@ -29,7 +29,7 @@ class QRCallWebpackPlugin {
 
     compiler.hooks.compilation.tap('QRCallWebpackPlugin', (compilation, compilationParams) => {
       compilation.hooks.optimizeAssets.tap('QRCallWebpackPlugin', (assets) => {
-        Object.keys(compilation.assets).some(fileName => {
+        Object.keys(compilation.assets).forEach(fileName => {
           if (/\.js$/.test(fileName)) {
             const { port } = compiler.options.devServer;
 
