@@ -2,7 +2,7 @@
 const ConcatSource = require('webpack-sources').ConcatSource;
 const utils = require('./utils');
 
-class QrCodeWebpackPlugin {
+class QRCallWebpackPlugin {
   fn = 'qr'
   small = false
 
@@ -13,7 +13,7 @@ class QrCodeWebpackPlugin {
   }
 
   apply(compiler, callback) {
-    compiler.hooks.afterResolvers.tap('QrCodeWebpackPlugin', (compiler2) => {
+    compiler.hooks.afterResolvers.tap('QRCallWebpackPlugin', (compiler2) => {
       const { host, port, after } = compiler.options.devServer;
       const _self = this;
 
@@ -27,8 +27,8 @@ class QrCodeWebpackPlugin {
       }
     });
 
-    compiler.hooks.compilation.tap('QrCodeWebpackPlugin', (compilation, compilationParams) => {
-      compilation.hooks.optimizeAssets.tap('QrCodeWebpackPlugin', (assets) => {
+    compiler.hooks.compilation.tap('QRCallWebpackPlugin', (compilation, compilationParams) => {
+      compilation.hooks.optimizeAssets.tap('QRCallWebpackPlugin', (assets) => {
         Object.keys(compilation.assets).some(fileName => {
           if (/\.js$/.test(fileName)) {
             const { host, port } = compiler.options.devServer;
@@ -42,5 +42,6 @@ class QrCodeWebpackPlugin {
     });
   }
 }
-module.exports = QrCodeWebpackPlugin;
+
+module.exports = QRCallWebpackPlugin;
 
