@@ -1,0 +1,40 @@
+{
+  "name": "qrcode-webpack-plugin",
+  "version": "1.0.0",
+  "description": "qrcode-webpack-plugin qrcode-terminal webpack-plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --hot",
+    "lint:fix": "eslint src/**.js --fix"
+  },
+  "author": "hzy0913",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hzy0913/qrcode-webpack-plugin.git"
+  },
+  "keywords": [
+    "qrcode-webpack-plugin",
+    "qrcode-terminal",
+    "webpack-plugin"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hzy0913/qrcode-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/Hzy0913/qrcode-webpack-plugin#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "html-webpack-plugin": "^4.0.0-alpha",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0"
+  }
+}
