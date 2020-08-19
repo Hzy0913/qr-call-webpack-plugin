@@ -31,10 +31,10 @@ class QRCallWebpackPlugin {
       compilation.hooks.optimizeAssets.tap('QRCallWebpackPlugin', (assets) => {
         Object.keys(compilation.assets).some(fileName => {
           if (/\.js$/.test(fileName)) {
-            const { host, port } = compiler.options.devServer;
+            const { port } = compiler.options.devServer;
 
             compilation.assets[fileName] = new ConcatSource(
-              utils.injectQrFn({ handle: this.fn, host, port }), compilation.assets[fileName],
+              utils.injectQrFn({ handle: this.fn, port }), compilation.assets[fileName],
             );
           }
         });

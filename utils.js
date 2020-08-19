@@ -35,11 +35,11 @@ exports.devService = ({port, host, small}) => {
 }
 
 exports.injectQrFn = (options) => {
-    const { handle = 'qr', host, port } = options || {};
+    const { handle = 'qr', port } = options || {};
     return `/******/ // 🐳 qrcode-webpack-plugin can only be used in the development environment  
 /******/ (window.${handle} = function(size) {
 /******/   var _xhr = new XMLHttpRequest();
-/******/   _xhr.open("GET", "http://${host}:${port}/qr?qr=" + encodeURIComponent(location.href) + "&size=" + (size || ''), true);
+/******/   _xhr.open("GET", "http://" + location.host.split(':')[0] + ":${port}/qr?qr=" + encodeURIComponent(location.href) + "&size=" + (size || ''), true);
 /******/   _xhr.send();
 /******/   console.log('%c📱 Please check the QR code output from the terminal ', 'color: #4CAF50; font-weight: bold');
 /******/ });\n`
