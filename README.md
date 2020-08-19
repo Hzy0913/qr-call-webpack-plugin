@@ -1,0 +1,1 @@
+# qrcode-webpack-plugin
