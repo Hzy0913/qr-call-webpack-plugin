@@ -2,6 +2,7 @@ node_modules
 logs
 dist
 package-lock.json
+yarn.lock
 .idea
 .vscode/
 .DS_*
