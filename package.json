@@ -1,7 +1,7 @@
 {
-  "name": "qrcode-webpack-plugin",
+  "name": "qr-call-webpack-plugin",
   "version": "1.0.0",
-  "description": "qrcode-webpack-plugin qrcode-terminal webpack-plugin",
+  "description": "qr-call-webpack-plugin qrcode-terminal webpack-plugin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/Hzy0913/qrcode-webpack-plugin.git"
   },
   "keywords": [
-    "qrcode-webpack-plugin",
+    "qr-call-webpack-plugin",
     "qrcode-terminal",
     "webpack-plugin"
   ],
