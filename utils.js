@@ -19,16 +19,16 @@ exports.devService = ({port, host, small}) => {
   return function server(app, server, compiler) {
       app.get('/qr', function (req, res) {
           const { qr, size } = req.query;
-          const [path] = qr.split(port);
+          const [, path] = qr.split(port);
           let qrCodeSize;
-          qrCodeSize = small
+          qrCodeSize = small;
 
           if (size) {
               qrCodeSize = size === 's';
           }
 
-          terminal.generate(`http://${exports.getIPAdress()}:${port}/${path}`, {small: qrCodeSize})
-          res.json({custom: ' Please check the QR code output from the console '})
+          terminal.generate(`http://${exports.getIPAdress()}:${port}${path}`, {small: qrCodeSize});
+          res.json({custom: ' Please check the QR code output from the console '});
       })
   }
 }
