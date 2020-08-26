@@ -5,11 +5,13 @@ const utils = require('./utils');
 class QRCallWebpackPlugin {
   fn = 'qr'
   small = false
+  fileNames = undefined
 
   constructor(options) {
-    const { name, small } = options || {};
+    const { name, small, fileNames } = options || {};
     this.fn = name;
     this.small = small || false;
+    this.fileNames = fileNames;
   }
 
   apply(compiler, callback) {
@@ -29,17 +31,34 @@ class QRCallWebpackPlugin {
 
     compiler.hooks.compilation.tap('QRCallWebpackPlugin', (compilation, compilationParams) => {
       compilation.hooks.optimizeAssets.tap('QRCallWebpackPlugin', (assets) => {
-        Object.keys(compilation.assets).forEach(fileName => {
+        const fileNames = this.getConcatSourceFiles();
+        Object.keys(assets).forEach(fileName => {
           if (/\.js$/.test(fileName)) {
-            const { port } = compiler.options.devServer;
+            if (fileNames) {
+              const isConcatSourceFile = fileNames.find(itemName => fileName.includes(itemName));
+              return isConcatSourceFile && this.concatSource(compiler, compilation, fileName);
+            }
 
-            compilation.assets[fileName] = new ConcatSource(
-              utils.injectQrFn({ handle: this.fn, port }), compilation.assets[fileName],
-            );
+            this.concatSource(compiler, compilation, fileName);
           }
         });
       });
     });
+  }
+
+  concatSource(compiler, compilation, fileName) {
+    const { port } = compiler.options.devServer;
+
+    compilation.assets[fileName] = new ConcatSource(
+      utils.injectQrFn({ handle: this.fn, port }), compilation.assets[fileName],
+    );
+  }
+
+  getConcatSourceFiles() {
+    if (!this.fileNames) return;
+
+    const fileNames = Array.isArray(this.fileNames) ? this.fileNames : [this.fileNames];
+    return fileNames.map(name => name.split('.js')[0]);
   }
 }
 
