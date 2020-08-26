@@ -33,7 +33,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(),
     new QrCodeWebpackPlugin({
-      // small: true
+      small: true,
+      fileNames: 'index.js'
     }),
   ]
 }
