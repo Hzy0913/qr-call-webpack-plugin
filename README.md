@@ -23,6 +23,7 @@ const webpackConfig = {
 
 |param   |type   |describe   |
 | ------------ | ------------ | ------------ |
+| fileNames  | string or array  | the file names of the injection qr method.  If you ignore this option, the qr method will be injected into all bundle files.    |
 | small  | boolean  | output small size qrcode  |
 | name  | string  | function name of the browser  |
 
