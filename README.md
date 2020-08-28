@@ -4,8 +4,6 @@ A webpack plugin of Call the terminal to output QR code through the browser cons
 
 <img src='https://raw.githubusercontent.com/Hzy0913/hanlibrary/master/qrcode-webpack-plugin%20.gif' width=640/  alt="qrcode-webpack-plugin">
 
-![qrcode-webpack-plugin](https://raw.githubusercontent.com/Hzy0913/hanlibrary/master/qrcode-webpack-plugin.gif "qrcode-webpack-plugin")
-
 ### Install
     $ npm i qr-call-webpack-plugin
 ### Usage
