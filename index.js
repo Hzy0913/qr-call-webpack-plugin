@@ -3,13 +3,9 @@ const ConcatSource = require('webpack-sources').ConcatSource;
 const utils = require('./utils');
 
 class QRCallWebpackPlugin {
-  fn = 'qr'
-  small = false
-  fileNames = undefined
-
   constructor(options) {
     const { name, small, fileNames } = options || {};
-    this.fn = name;
+    this.fn = name || 'qr';
     this.small = small || false;
     this.fileNames = fileNames;
   }
