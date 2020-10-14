@@ -32,7 +32,9 @@ const webpackConfig = {
 ### Browser function
 在浏览器控制台中调用 qr() 方法，并输出二维码于命令行面板
 - qr('s')
+
 当调用 qr('s') 方法传递's'参数时，终端将输小尺寸的qrcode。
 
 - qr('l')
+
 当调用 qr('l') 方法传递'l'参数时，终端将输大尺寸的qrcode。
