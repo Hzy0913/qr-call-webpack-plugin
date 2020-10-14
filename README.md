@@ -1,4 +1,4 @@
-### qr-call-webpack-plugin
+## qr-call-webpack-plugin
 
 A webpack plugin of Call the terminal to output QR code through the browser console
 
@@ -35,4 +35,5 @@ const webpackConfig = {
 
  When the 's' parameter is passed in **qr('s')** method, terminal will output the small qrcode.
 - qr('l')
+
  When the 'l' parameter is passed in **qr('l')** method, terminal will output the big qrcode.

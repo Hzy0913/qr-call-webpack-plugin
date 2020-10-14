@@ -1,4 +1,4 @@
-### qr-call-webpack-plugin
+## qr-call-webpack-plugin
 
 一个通过浏览器控制台调用命令行打印二维码的webpack插件
 
