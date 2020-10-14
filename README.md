@@ -2,6 +2,8 @@
 
 A webpack plugin of Call the terminal to output QR code through the browser console
 
+[中文文档](https://github.com/Hzy0913/qr-call-webpack-plugin/blob/master/README_zh.md "中文文档")
+
 <img src='https://raw.githubusercontent.com/Hzy0913/hanlibrary/master/qrcode-webpack-plugin%20.gif' width=640/  alt="qrcode-webpack-plugin">
 
 ### Install
