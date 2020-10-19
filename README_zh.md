@@ -25,12 +25,12 @@ const webpackConfig = {
 
 |参数   |类型   |描述   |
 | ------------ | ------------ | ------------ |
-| fileNames  | string or array  | 注入qr方法的文件名，如果忽略此选项，则qr方法将注入所有的打包文件中。    |
+| fileNames  | string or array  | 注入qr方法的文件名，如果忽略此选项，则qr方法将注入所有的打包文件中    |
 | small  | boolean  | 输出小尺寸的二维码  |
 | name  | string  | 浏览器的函数方法名称  |
 
 ### Browser function
-在浏览器控制台中调用 qr() 方法，并输出二维码于命令行面板
+在浏览器控制台中调用 qr() 方法，并输出二维码于命令行面板。
 - qr('s')
 
 当调用 qr('s') 方法传递's'参数时，终端将输小尺寸的qrcode。
