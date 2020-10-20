@@ -14,7 +14,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 3000,
-    after: function server(app, server, compiler) {
+    before: function server(app, server, compiler) {
       app.get('/test', function (req, res) {
         console.log('test')
         res.send()
