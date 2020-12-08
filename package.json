@@ -19,7 +19,7 @@
     "qrcode-terminal",
     "webpack-plugin"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Hzy0913/qrcode-webpack-plugin/issues"
   },
